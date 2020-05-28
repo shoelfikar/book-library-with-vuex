@@ -29,19 +29,22 @@
         </div>
       </div>
       <Carousel />
-      <!-- <CardList /> -->
+      <Profil />
+      <History />
     </div>
   </div>
 </template>
 
 <script>
 import Carousel from '../module/Carousel'
-// import CardList from '../module/CardList'
+import Profil from '../module/Profil'
+import History from '../module/History'
 export default {
   name: 'Aside',
   components: {
-    Carousel
-    // CardList
+    Carousel,
+    Profil,
+    History
   },
   methods: {
     asideClick () {
@@ -67,12 +70,13 @@ export default {
 <style  scoped>
   .aside{
     width: 100vw;
-    height: 100%;
+    height:100%;
     transition: 1s;
-    box-sizing: border-box;
+    box-sizing: border-box; 
     display: flex;
     flex-direction: column;
     position: relative;
+    /* overflow:hidden; */
   }
   .navbar-aside{
     width: 100vw;
@@ -84,8 +88,9 @@ export default {
     background-color: #ffffff;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     box-sizing: border-box;
-    /* margin-bottom: 35px; */
+    margin-bottom: 35px;
     position: fixed;
+    top: 0;
     z-index: 10;
   }
   .sorting{
@@ -131,6 +136,9 @@ export default {
     width: 83vw;
   }
   .burger-hide{
+    display: none;
+  }
+  .hide{
     display: none;
   }
 </style>

@@ -4,17 +4,20 @@
       <Sidebar />
       <Aside />
     </div>
+    <Modal />
   </div>
 </template>
 
 <script>
 import Sidebar from '../components/module/Sidebar'
 import Aside from '../components/module/Aside'
+import Modal from '../components/module/Modal'
 export default {
   name: 'Dashbord',
   components: {
     Sidebar,
-    Aside
+    Aside,
+    Modal
   }
 }
 </script>

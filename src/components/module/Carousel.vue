@@ -1,31 +1,59 @@
 <template>
   <div>
-    <div class="carousel" data-flickity='{"wrapAround": true, "autoPlay": 1500 }'>
-      <div class="carousel-cell">
-        <img src="../../assets/image/img/home/covernya.png" alt="">
-      </div>
-      <div class="carousel-cell">
-        <img src="../../assets/image/img/home/react-native.png" alt="">
-      </div>
-      <div class="carousel-cell">
-        <img src="../../assets/image/img/home/ubur-ubur.png" alt="">
-      </div>
-    </div>
-    <!-- card-list -->
-    <!-- <div class="card-list">
-      <h3>List Book</h3>
-      <div class="list-book">
-        <div class="card-book">
-          <div class="card" style="width: 18rem;">
-            <img src="../../assets/image/img/home/covernya.png" class="card-img-top" alt="">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
+    <div class="mycarousel">
+      <div class="carousel" data-flickity='{"wrapAround": true, "autoPlay": 1500 }'>
+        <div class="carousel-cell">
+          <img src="../../assets/image/img/home/covernya.png" alt="">
+        </div>
+        <div class="carousel-cell">
+          <img src="../../assets/image/img/home/react-native.png" alt="">
+        </div>
+        <div class="carousel-cell">
+          <img src="../../assets/image/img/home/ubur-ubur.png" alt="">
         </div>
       </div>
-    </div> -->
+      <!-- card-list -->
+      <div class="container-1">
+        <h3>List Book</h3>
+        <div class="list-book d-flex justify-content-start flex-wrap">
+          <div class="col-md-3">
+            <img src="../../assets/image/img/home/covernya.png" alt="" width="250">
+            <h4>Dilan</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis repudiandae consequuntur laborum.</p>
+          </div>
+          <div class="col-md-3">
+            <img src="../../assets/image/img/home/covernya.png" alt="" width="250">
+            <h4>Dilan</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis repudiandae consequuntur laborum.</p>
+          </div>
+          <div class="col-md-3">
+            <img src="../../assets/image/img/home/covernya.png" alt="" width="250">
+            <h4>Dilan</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis repudiandae consequuntur laborum.</p>
+          </div>
+          <div class="col-md-3">
+            <img src="../../assets/image/img/home/covernya.png" alt="" width="250">
+            <h4>Dilan</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis repudiandae consequuntur laborum.</p>
+          </div>
+          <div class="col-md-3">
+            <img src="../../assets/image/img/home/covernya.png" alt="" width="250">
+            <h4>Dilan</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis repudiandae consequuntur laborum.</p>
+          </div>
+        </div>
+        <!-- pagination -->
+        <nav aria-label="Page navigation">
+          <ul class="pagination justify-content-center mb-4">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -36,10 +64,6 @@ export default {
 </script>
 
 <style scoped>
-  * { box-sizing: border-box; }
-
-    body { font-family: sans-serif; }
-
     .carousel {
       background:#ffffff;
       width:900px;
@@ -62,7 +86,14 @@ export default {
     }
     .list-book{
       box-sizing: border-box;
-      width: 700px;
-      margin: auto;
+      width: 100%;
+    }
+    .container-1{
+      margin:auto;
+      width: 80vw;
+      box-sizing: border-box;
+    }
+    .hide{
+      display: none;
     }
 </style>

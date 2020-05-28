@@ -10,14 +10,15 @@
             <img class="image-profil" src="../../assets/image/display-name.png" alt="">
           </div>
           <div class="name-profil">
-            <h4>Niki zefanya</h4>
+            <h4>{{this.isLogin.fullname}}</h4>
           </div>
         </div>
         <div class="menu-content">
           <ul class="menu-list">
-            <li><i class="fas fa-globe"><a href="#" class="menus">History</a></i></li>
-            <li><i class="fas fa-plus-circle"><a href="#" class="menus">Add Book*</a></i></li>
-            <li><i class="fas fa-sign-out-alt"><a href="#" class="menus">Logout</a></i></li>
+            <li><i class="fas fa-user-cog"><a href="#" class="menus" @click="profil">Profil</a></i></li>
+            <li><i class="fas fa-globe"><a href="#" class="menus" @click="history">History</a></i></li>
+            <li><i class="fas fa-plus-circle"><a href="#" class="menus" data-toggle="modal" data-target="#exampleModal">Add Book*</a></i></li>
+            <li><i class="fas fa-sign-out-alt"><a href="#" class="menus" @click="logout">Logout</a></i></li>
           </ul>
         </div>
       </div>
@@ -26,6 +27,7 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
 export default {
   name: 'Sidebar',
   methods: {
@@ -42,7 +44,38 @@ export default {
       sidebar.classList.toggle('hide')
       burger.classList.toggle('burger-hide')
       burgerIcon.classList.toggle('hide-burger')
-    }
+    },
+    profil (e) {
+      e.preventDefault()
+      const carousel = document.querySelector('.mycarousel')
+      const profil = document.querySelector('.myprofil')
+      const history = document.querySelector('.container')
+      carousel.classList.add('hide')
+      profil.classList.remove('hide')
+      history.classList.add('hide')
+    },
+    history (e) {
+      e.preventDefault()
+      const carousel = document.querySelector('.mycarousel')
+      const history = document.querySelector('.container')
+      const profil = document.querySelector('.myprofil')
+      carousel.classList.add('hide')
+      history.classList.remove('hide')
+      profil.classList.add('hide')
+    },
+    logout (e) {
+      e.preventDefault()
+      delete localStorage.token
+      delete localStorage.idUser
+      this.$router.push('/login')
+    },
+    ...mapActions('user', ['getLogin'])
+  },
+  mounted () {
+    this.getLogin(localStorage.idUser)
+  },
+  computed: {
+    ...mapState('user', ['isLogin'])
   }
 }
 </script>

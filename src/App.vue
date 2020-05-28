@@ -11,4 +11,9 @@
     padding: 0;
     font-family: 'Rubik', sans-serif;
   }
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
 </style>
